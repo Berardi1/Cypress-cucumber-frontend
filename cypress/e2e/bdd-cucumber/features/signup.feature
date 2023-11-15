@@ -5,7 +5,7 @@ Feature: Signup
 
     Background:
       Given I navigate to Parabank
- 
+    @smoke
     Scenario: Signup with valid credententials
         When I enter valid credententials into the signup fields
         And I click the register button

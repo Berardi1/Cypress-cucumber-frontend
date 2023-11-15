@@ -3,6 +3,7 @@ Feature: Transfer Funds
   as a customer
   I want to transfer funds between my accounts
 
+  @smoke
   Scenario: Successful Fund Transfer
     Given I navigate to Parabank
     And I am logged in to my bank account

@@ -4,6 +4,6 @@ Frontend test project using [JavaScript](https://www.javascript.com/), [Cypress]
 
 ## Table of Contents
 - [Pre-requisites and setup](docs/Setup.md)
-- [Tests execution](docs/TestsExecution.md)
+- [Tests execution](docs/TestExecution.md)
 - [QA concepts](docs/QA.md)
 

@@ -6,8 +6,8 @@ Follow these steps to quickly set up and run the project locally.
 
 Ensure you have the following software installed on your machine:
 
-- [Node.js](https://nodejs.org/) (version X.X.X)
-- [npm](https://www.npmjs.com/) (Node Package Manager)
+- [Node.js](https://nodejs.org/) 
+- [npm](https://www.npmjs.com/) 
 
 ### Clone the Repository
 

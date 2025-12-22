@@ -1,32 +1,69 @@
-# QA Approach
+QA Approach
 
-## Introduction
+This project applies a practical Quality Assurance (QA) approach focused on realistic test coverage, maintainability, and traceability between automated tests and documented requirements.
 
-This section outlines our Quality Assurance (QA) approach, emphasizing the use of Gherkin for behavior-driven development (BDD), scenario tagging for organization, and the Page Object Model (POM) for test maintainability.
+The automated test suite is built using Cypress with Cucumber (BDD), following a structure that mirrors how QA teams work in real-world projects. Test scenarios are designed to reflect actual user behavior and system expectations, rather than isolated technical checks.
 
-## Gherkin Language for BDD
+Behavior-Driven Development (BDD) with Gherkin
 
-Behavior-Driven Development (BDD) is a collaborative approach to software development that enhances communication between team members, including developers, QA, and non-technical stakeholders. At the core of BDD is the Gherkin language, a plain-text language with a specific syntax used to describe system behavior.
+Gherkin is used to describe application behavior in a clear and readable way, enabling alignment between test scenarios, expected system behavior, and QA documentation.
 
-### Page Object Model (POM)
+In this project:
 
-This project follows the Page Object Model (POM) design pattern for organizing and maintaining test code. The key advantages of using the Page Object Model include:
+Gherkin scenarios represent user-facing behaviors such as login, signup, and fund transfers.
 
-- **Modularity**: Test code is organized into reusable components called "Page Objects," representing individual pages or components of the application. This modular structure enhances code maintainability and reusability.
+Scenarios are aligned with Jira user stories and bugs, ensuring traceability between automated tests and QA findings.
 
-- **Readability**: POM improves the readability of test scripts by encapsulating page-specific actions and elements within dedicated Page Object classes. This abstraction makes the test scripts more concise and easier to understand.
+Both positive (happy path) and negative scenarios are covered when supported by the system behavior.
 
-- **Maintenance**: Changes to the UI can be localized to specific Page Objects, reducing the impact on the overall test suite. This makes it easier to maintain tests as the application evolves.
+This approach helps keep tests understandable and meaningful, even for non-technical stakeholders.
 
-### Scenario Tagging
+Page Object Model (POM)
 
-Cucumber supports tagging scenarios with annotations to categorize and organize them based on specific criteria. In this project, we utilize scenario tagging for the following reasons:
+The test suite follows the Page Object Model (POM) design pattern to improve maintainability and scalability.
 
-- **Organization**: Tagging allows us to categorize scenarios based on features, functional areas, or any custom criteria. This helps in organizing and managing a growing suite of scenarios.
+Each page or functional area of the application is represented by a dedicated Page Object that encapsulates:
 
-- **Selective Execution**: By assigning tags to scenarios, it becomes possible to selectively execute specific groups of scenarios during testing. This is particularly useful for focusing on specific features or areas during development and testing phases.
+UI elements
 
-- **Parallel Execution**: Scenario tagging facilitates parallel execution of tests. By grouping scenarios with similar tags, tests can be distributed across multiple environments, speeding up the overall testing process.
+Page-specific actions
 
-These practices aim to enhance the maintainability, readability, and efficiency of the test suite, contributing to a robust and scalable automated testing strategy.
+Navigation logic
 
+This structure proved especially valuable during the upgrade of the test framework to Cypress 13+, as UI interactions and selectors could be maintained with minimal impact on test scenarios.
+
+Key benefits observed in this project:
+
+Reduced duplication of selectors
+
+Cleaner and more readable step definitions
+
+Easier adaptation to framework or UI changes
+
+Scenario Tagging and Test Organization
+
+Cucumber scenario tags are used to organize and control test execution in a way that reflects real QA workflows.
+
+In this project:
+
+@smoke scenarios cover critical business paths such as login, signup, and fund transfers.
+
+Tags allow selective execution depending on the testing scope (e.g. quick validation vs full regression).
+
+The structure supports future extension to regression suites or parallel execution, if required.
+
+This tagging strategy helps keep the test suite flexible and execution-focused.
+
+QA Decisions and Findings
+
+During test execution, system behaviors were evaluated critically rather than forcing tests to pass.
+
+Notable QA decisions include:
+
+Negative login scenarios were documented as known limitations due to the Parabank demo environment allowing access with invalid credentials.
+
+Automated tests were not modified to mask incorrect behavior, preserving test integrity.
+
+Observed issues and limitations were documented and tracked in Jira, maintaining transparency and traceability.
+
+This approach ensures that test results reflect actual system behavior, not artificial success.

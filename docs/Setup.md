@@ -1,18 +1,43 @@
 # Setup
 
-Follow these steps to quickly set up and run the project locally.
+Follow these steps to set up and run the project locally.
 
-### Prerequisites
+## Prerequisites
 
-Ensure you have the following software installed on your machine:
+Make sure you have installed:
 
-- [Node.js](https://nodejs.org/) 
-- [npm](https://www.npmjs.com/) 
+- Node.js (LTS): https://nodejs.org/
+- npm (included with Node.js)
 
-### Clone the Repository
+## Clone the repository
 
+~~~bash
 git clone https://github.com/Berardi1/Cypress-cucumber-frontend.git
+cd Cypress-cucumber-frontend
+~~~
 
+## Install dependencies
 
-### Install project dependencies.
-- Run `npm install`.
+~~~bash
+npm install
+~~~
+
+## Run tests
+
+### Open Cypress UI (interactive)
+
+~~~bash
+npx cypress open
+~~~
+
+### Run tests headless (CLI)
+
+~~~bash
+npx cypress run
+~~~
+
+## Notes
+
+- The base URL is configured in `cypress.config.js` via `baseUrl`.
+- Feature files are located under: `cypress/e2e/bdd-cucumber/features/`
+- Step definitions are located under: `cypress/e2e/bdd-cucumber/steps/`

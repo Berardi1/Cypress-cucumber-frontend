@@ -9,35 +9,39 @@ Make sure you have installed:
 - Node.js (LTS): https://nodejs.org/
 - npm (included with Node.js)
 
-## Clone the repository
+## Clone the Repository
 
-~~~bash
+```bash
 git clone https://github.com/Berardi1/Cypress-cucumber-frontend.git
 cd Cypress-cucumber-frontend
-~~~
+```
 
-## Install dependencies
+## Install Dependencies
 
-~~~bash
+```bash
 npm install
-~~~
+```
 
-## Run tests
+## Run Tests
 
-### Open Cypress UI (interactive)
+### Open Cypress UI
 
-~~~bash
+To open Cypress in interactive mode:
+
+```bash
 npx cypress open
-~~~
+```
 
-### Run tests headless (CLI)
+### Run Tests in Headless Mode
 
-~~~bash
-npx cypress run
-~~~
+To execute the complete test suite from the command line:
+
+```bash
+npm test
+```
 
 ## Notes
 
-- The base URL is configured in `cypress.config.js` via `baseUrl`.
-- Feature files are located under: `cypress/e2e/bdd-cucumber/features/`
-- Step definitions are located under: `cypress/e2e/bdd-cucumber/steps/`
+- The base URL is configured in `cypress.config.js` using `baseUrl`.
+- Feature files are located under `cypress/e2e/bdd-cucumber/features/`.
+- Step definitions are located under `cypress/e2e/bdd-cucumber/steps/`.
